@@ -19,7 +19,6 @@ show_rofi() {
     local name=$(jq -r ".characters.\"$char\".name" "$CONFIG_FILE")
     local icon="$CHAR_DIR/$char/icon.png"
 
-    # 构建 rofi 条目（带图标）
     if [ -f "$icon" ]; then
       names+="$char\x00icon\x1f$icon\x1fdisplay\x1f$name\n"
     else
@@ -36,13 +35,14 @@ show_rofi() {
     -theme-str 'element-text {horizontal-align: 0.5; font-size: 14px;}'
 }
 
-# 更新壁纸
+# 更新壁纸（swww + hyprlock 背景）
 update_wallpaper() {
   local char="$1"
   local wallpaper="$CHAR_DIR/$char/wallpaper.png"
 
   if [ -f "$wallpaper" ]; then
     swww img "$wallpaper" --transition-type grow --transition-step 30 --transition-fps 60 --transition-duration 2
+    cp "$wallpaper" "$CONFIG_DIR/current_wallpaper.png"
   fi
 }
 
@@ -74,12 +74,10 @@ update_fastfetch() {
   local icon="$CHAR_DIR/$char/icon.png"
   local color=$(jq -r ".characters.\"$char\".color" "$CONFIG_FILE")
 
-  # 如果没有缓存颜色，提取
   if [ "$color" = "null" ] || [ -z "$color" ]; then
-    color=$("$CONFIG_DIR/extract-color.sh" "$char")
+    color=$("$CONFIG_DIR/scripts/extract-color.sh" "$char")
   fi
 
-  # 直接用角色自己的 icon 路径 + recache 强制刷新
   if [ -f "$icon" ]; then
     local ff_config="$HOME/.config/fastfetch/config.jsonc"
 
@@ -114,6 +112,7 @@ main() {
 
   wait
 
+  notify-send "角色切换" "已切换到 $(jq -r ".characters.\"$selected\".name" "$CONFIG_FILE")" -i "$CHAR_DIR/$selected/icon.png" 2>/dev/null
   echo "Switched to: $selected"
 }
 

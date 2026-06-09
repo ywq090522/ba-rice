@@ -1,5 +1,5 @@
 function fastfetch --wraps=/usr/bin/fastfetch
-    set -l config "$HOME/.config/character-theme/config.json"
+    set -l config "$HOME/.ba-rice/config.json"
     set -l char (jq -r '.current' $config 2>/dev/null)
 
     if test -n "$char" -a "$char" != "null"
