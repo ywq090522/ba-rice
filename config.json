@@ -1,0 +1,145 @@
+{
+  "current": "rio",
+  "characters": {
+    "ako": {
+      "name": "Ako",
+      "dir": "/home/ywq/Pictures/character/ako",
+      "color": "#89b4fa"
+    },
+    "arisu_maid": {
+      "name": "Arisu (Maid)",
+      "dir": "/home/ywq/Pictures/character/arisu_maid",
+      "color": "#94e2d5"
+    },
+    "azusa_swimsuit": {
+      "name": "Azusa (Swimsuit)",
+      "dir": "/home/ywq/Pictures/character/azusa_swimsuit",
+      "color": "#fab387"
+    },
+    "hanako_swimsuit": {
+      "name": "Hanako (Swimsuit)",
+      "dir": "/home/ywq/Pictures/character/hanako_swimsuit",
+      "color": "#f38ba8"
+    },
+    "hifumi_swimsuit": {
+      "name": "Hifumi (Swimsuit)",
+      "dir": "/home/ywq/Pictures/character/hifumi_swimsuit",
+      "color": "#fab387"
+    },
+    "hina_dress": {
+      "name": "Hina (Dress)",
+      "dir": "/home/ywq/Pictures/character/hina_dress",
+      "color": "#89b4fa"
+    },
+    "hoshino": {
+      "name": "Hoshino",
+      "dir": "/home/ywq/Pictures/character/hoshino",
+      "color": "#f38ba8"
+    },
+    "hoshino_battle": {
+      "name": "Hoshino (Battle)",
+      "dir": "/home/ywq/Pictures/character/hoshino_battle",
+      "color": "#f38ba8"
+    },
+    "hoshino_swimsuit": {
+      "name": "Hoshino (Swimsuit)",
+      "dir": "/home/ywq/Pictures/character/hoshino_swimsuit",
+      "color": "#74c7ec"
+    },
+    "izuna": {
+      "name": "Izuna",
+      "dir": "/home/ywq/Pictures/character/izuna",
+      "color": "#f38ba8"
+    },
+    "kayoko_dress": {
+      "name": "Kayoko (Dress)",
+      "dir": "/home/ywq/Pictures/character/kayoko_dress",
+      "color": "#f5e0dc"
+    },
+    "kisaki": {
+      "name": "Kisaki",
+      "dir": "/home/ywq/Pictures/character/kisaki",
+      "color": "#f38ba8"
+    },
+    "koharu": {
+      "name": "Koharu",
+      "dir": "/home/ywq/Pictures/character/koharu",
+      "color": "#f38ba8"
+    },
+    "kokona": {
+      "name": "Kokona",
+      "dir": "/home/ywq/Pictures/character/kokona",
+      "color": "#89b4fa"
+    },
+    "mari_idol": {
+      "name": "Mari (Idol)",
+      "dir": "/home/ywq/Pictures/character/mari_idol",
+      "color": "#fab387"
+    },
+    "midori_maid": {
+      "name": "Midori (Maid)",
+      "dir": "/home/ywq/Pictures/character/midori_maid",
+      "color": "#fab387"
+    },
+    "mika": {
+      "name": "Mika",
+      "dir": "/home/ywq/Pictures/character/mika",
+      "color": "#f9e2af"
+    },
+    "misaki": {
+      "name": "Misaki",
+      "dir": "/home/ywq/Pictures/character/misaki",
+      "color": "#f5c2e7"
+    },
+    "momoi_maid": {
+      "name": "Momoi (Maid)",
+      "dir": "/home/ywq/Pictures/character/momoi_maid",
+      "color": "#fab387"
+    },
+    "natsu": {
+      "name": "Natsu",
+      "dir": "/home/ywq/Pictures/character/natsu",
+      "color": "#74c7ec"
+    },
+    "noa": {
+      "name": "Noa",
+      "dir": "/home/ywq/Pictures/character/noa",
+      "color": "#74c7ec"
+    },
+    "rio": {
+      "name": "Rio",
+      "dir": "/home/ywq/Pictures/character/rio",
+      "color": "#f38ba8"
+    },
+    "shiroko": {
+      "name": "Shiroko",
+      "dir": "/home/ywq/Pictures/character/shiroko",
+      "color": "#74c7ec"
+    },
+    "shiroko_terror": {
+      "name": "Shiroko (Terror)",
+      "dir": "/home/ywq/Pictures/character/shiroko_terror",
+      "color": "#b4befe"
+    },
+    "shun_kid": {
+      "name": "Shun (Kid)",
+      "dir": "/home/ywq/Pictures/character/shun_kid",
+      "color": "#b4befe"
+    },
+    "toki": {
+      "name": "Toki",
+      "dir": "/home/ywq/Pictures/character/toki",
+      "color": "#74c7ec"
+    },
+    "yuuka_pajama": {
+      "name": "Yuuka (Pajama)",
+      "dir": "/home/ywq/Pictures/character/yuuka_pajama",
+      "color": "#b4befe"
+    },
+    "yuuka_sportswear": {
+      "name": "Yuuka (Sportswear)",
+      "dir": "/home/ywq/Pictures/character/yuuka_sportswear",
+      "color": "#74c7ec"
+    }
+  }
+}
