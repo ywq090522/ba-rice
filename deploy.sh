@@ -2,7 +2,7 @@
 # ba-rice: Blue Archive Character Theme System — 一键部署脚本
 set -e
 
-REPO_URL="${1:-ssh://root@192.168.121.22/root/.hermes/repos/ba-rice.git}"
+REPO_URL="${1:-root@192.168.121.91:/root/.hermes/repos/ba-rice.git}"
 IMAGE_TAR="${2:-}"
 BA="$HOME/.ba-rice"
 
