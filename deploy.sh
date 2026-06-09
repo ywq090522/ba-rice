@@ -13,7 +13,7 @@ echo "╚═══════════════════════�
 # ── 依赖检查 ──
 echo ""
 echo "▸ 检查依赖..."
-DEPS=(jq rofi swww fastfetch hyprlock magick fish)
+DEPS=(jq rofi swww)
 MISSING=()
 for dep in "${DEPS[@]}"; do
     if ! command -v "$dep" &>/dev/null; then
@@ -22,7 +22,7 @@ for dep in "${DEPS[@]}"; do
 done
 if [ ${#MISSING[@]} -gt 0 ]; then
     echo "  ✗ 缺少: ${MISSING[*]}"
-    echo "  请先安装: sudo pacman -S ${MISSING[*]}"
+    echo "  请手动安装后再运行本脚本"
     exit 1
 fi
 echo "  ✓ 依赖齐全"
@@ -34,19 +34,23 @@ if [ -d "$BA/.git" ]; then
     echo "  已存在，拉取最新..."
     git -C "$BA" pull --ff-only 2>/dev/null || true
 else
-    git clone "$REPO_URL" "$BA"
+    if ! git clone "$REPO_URL" "$BA" 2>/dev/null; then
+        echo "  ✗ 无法连接裸仓库"
+        echo "  请手动克隆到 $BA 后重新运行本脚本"
+        echo "  例如: git clone <仓库地址> $BA"
+        exit 1
+    fi
 fi
 
 # ── 解压图片 ──
 echo ""
 echo "▸ 解压角色图片..."
-if [ -d "$BA/characters/akane" ] || [ -d "$BA/characters/shiroko" ]; then
+if [ -d "$BA/characters/shiroko" ]; then
     echo "  已存在，跳过"
 elif [ -n "$IMAGE_TAR" ] && [ -f "$IMAGE_TAR" ]; then
     tar xzf "$IMAGE_TAR" -C "$BA/"
     echo "  ✓ 从 $IMAGE_TAR 解压完成"
 else
-    # 尝试从仓库同目录找 tar
     SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
     TAR_FILE="$SCRIPT_DIR/ba-rice-images.tar.gz"
     if [ -f "$TAR_FILE" ]; then
@@ -104,7 +108,6 @@ CURRENT=$(jq -r '.current // empty' "$BA/config.json" 2>/dev/null)
 if [ -n "$CURRENT" ] && [ -d "$BA/characters/$CURRENT" ]; then
     echo "  当前角色: $CURRENT"
 else
-    # 默认选第一个角色
     FIRST=$(jq -r '.characters | keys[0]' "$BA/config.json" 2>/dev/null)
     if [ -n "$FIRST" ]; then
         jq --arg c "$FIRST" '.current = $c' "$BA/config.json" > "$BA/config.json.tmp" && mv "$BA/config.json.tmp" "$BA/config.json"

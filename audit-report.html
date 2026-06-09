@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BA Rice 检查报告</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #64748b;
+      --line: #d9e0ea;
+      --good: #127a4a;
+      --warn: #a05a00;
+      --bad: #b42318;
+      --info: #1d4ed8;
+      --code: #f1f5f9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 15px/1.62 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 34px 24px;
+    }
+
+    main {
+      width: min(1080px, calc(100% - 32px));
+      margin: 24px auto 48px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: 30px;
+      font-weight: 760;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin: 8px 0;
+    }
+
+    code {
+      background: var(--code);
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      padding: 1px 5px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+    }
+
+    .meta {
+      color: #d1d5db;
+      margin-top: 10px;
+    }
+
+    .section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: #fbfdff;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 2px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 2px 9px;
+      font-size: 12px;
+      font-weight: 700;
+      border: 1px solid currentColor;
+      white-space: nowrap;
+    }
+
+    .bad {
+      color: var(--bad);
+    }
+
+    .warn {
+      color: var(--warn);
+    }
+
+    .good {
+      color: var(--good);
+    }
+
+    .info {
+      color: var(--info);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th,
+    td {
+      border-top: 1px solid var(--line);
+      padding: 11px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      background: #f8fafc;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 5px 0;
+    }
+
+    .evidence {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      header {
+        padding: 26px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BA Rice 检查报告</h1>
+    <p class="meta">检查日期：2026-06-10 · 路径：<code>/home/ywq/.ba-rice</code></p>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>结论</h2>
+      <p>仓库整体结构清晰，脚本语法和 JSON 配置解析通过，角色资产完整。但当前存在 1 个实际状态不一致问题，以及 4 个会影响稳定性、可维护性或部署可预期性的脚本问题。</p>
+      <div class="grid">
+        <div class="metric"><strong class="bad">1</strong><span class="muted">当前状态问题</span></div>
+        <div class="metric"><strong class="warn">4</strong><span class="muted">建议修复项</span></div>
+        <div class="metric"><strong class="good">28</strong><span class="muted">角色配置数量</span></div>
+        <div class="metric"><strong class="good">84</strong><span class="muted">角色图片文件</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>已验证通过</h2>
+      <ul>
+        <li><code>bash -n deploy.sh scripts/select.sh scripts/extract-color.sh</code> 通过。</li>
+        <li><code>fish -n configs/fastfetch.fish scripts/fastfetch.fish</code> 通过。</li>
+        <li><code>jq empty config.json</code> 和 <code>jq empty configs/fastfetch.jsonc</code> 通过。</li>
+        <li><code>config.json</code> 中 28 个角色均存在对应的 <code>avatar.png</code>、<code>icon.png</code>、<code>wallpaper.png</code>。</li>
+        <li><code>current = shiroko_terror</code> 在 <code>characters</code> 中存在。</li>
+        <li><code>/home/ywq/Pictures/character</code> 当前指向 <code>/home/ywq/.ba-rice/characters</code>，配置里的角色目录可访问。</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>问题清单</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>级别</th>
+            <th>问题</th>
+            <th>影响</th>
+            <th>建议</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge bad">高</span></td>
+            <td>当前角色与 fastfetch 图标不同步。<br><span class="evidence">证据：<code>config.json</code> 当前为 <code>shiroko_terror</code>，但 <code>configs/fastfetch.jsonc:36</code> 仍指向 <code>rio/icon.png</code>。</span></td>
+            <td>直接运行 fastfetch 时可能显示 Rio 图标，而不是当前角色 Shiroko Terror。</td>
+            <td>执行一次角色切换，或将 <code>configs/fastfetch.jsonc</code> 的 <code>logo.source</code> 更新为 <code>/home/ywq/.ba-rice/characters/shiroko_terror/icon.png</code>。</td>
+          </tr>
+          <tr>
+            <td><span class="badge warn">中</span></td>
+            <td><code>scripts/select.sh</code> 会在后台执行 <code>sudo cp</code>。<br><span class="evidence">位置：<code>scripts/select.sh:65-68</code>，并在 <code>scripts/select.sh:110</code> 后台运行。</span></td>
+            <td>如果 sudo 需要密码，角色切换可能卡在 <code>wait</code>，用户界面看起来像无响应。</td>
+            <td>改用 <code>sudo -n</code> 检测无密码权限；没有权限时跳过 SDDM 更新并发送通知，避免阻塞主流程。</td>
+          </tr>
+          <tr>
+            <td><span class="badge warn">中</span></td>
+            <td>选择结果没有校验是否是已配置角色。<br><span class="evidence">位置：<code>scripts/select.sh:97-105</code>。</span></td>
+            <td>rofi 支持用户输入任意文本，脚本会把任意值写进 <code>current</code>，后续壁纸、头像、通知、颜色提取都可能失败。</td>
+            <td>写入前检查 <code>jq -e --arg char "$selected" '.characters[$char]'</code>；不存在时退出并提示。</td>
+          </tr>
+          <tr>
+            <td><span class="badge warn">中</span></td>
+            <td>部署脚本吞掉 <code>git pull</code> 失败。<br><span class="evidence">位置：<code>deploy.sh:35</code> 使用 <code>git -C "$BA" pull --ff-only 2&gt;/dev/null || true</code>。</span></td>
+            <td>网络错误、冲突、远端不可达都会被当成成功继续执行，部署结果可能不是最新版本。</td>
+            <td>保留错误输出并在 pull 失败时退出，或明确提示“继续使用本地版本”。</td>
+          </tr>
+          <tr>
+            <td><span class="badge warn">低</span></td>
+            <td>rofi 无图标分支的 metadata 分隔符不完整。<br><span class="evidence">位置：<code>scripts/select.sh:25</code>，当前是 <code>$char\x1fdisplay...</code>，有图标分支使用了正确的 <code>\x00</code>。</span></td>
+            <td>目前所有角色都有图标，所以未触发；以后缺图标时 display metadata 可能无法生效。</td>
+            <td>改成 <code>$char\x00display\x1f$name\n</code>。</td>
+          </tr>
+          <tr>
+            <td><span class="badge info">低</span></td>
+            <td>存在重复的 fastfetch fish wrapper。<br><span class="evidence">文件：<code>configs/fastfetch.fish</code> 和 <code>scripts/fastfetch.fish</code> 内容一致；部署脚本只链接 <code>configs/fastfetch.fish</code>。</span></td>
+            <td>后续维护时容易只改其中一个文件，造成行为漂移。</td>
+            <td>保留一个权威文件；另一个删除、改为软链，或在 README 中说明用途。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>当前仓库状态</h2>
+      <ul>
+        <li><code>git status --short</code> 显示 <code>config.json</code> 已修改。</li>
+        <li>差异内容：<code>current</code> 从 <code>toki</code> 变为 <code>shiroko_terror</code>。</li>
+        <li>本报告未修改现有脚本或配置文件。</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>建议修复顺序</h2>
+      <ol>
+        <li>先同步 <code>configs/fastfetch.jsonc</code> 的 <code>logo.source</code>，消除当前可见的不一致。</li>
+        <li>给 <code>scripts/select.sh</code> 增加选择值校验，并让 SDDM 更新不阻塞角色切换。</li>
+        <li>调整 <code>deploy.sh</code> 的 <code>git pull</code> 失败处理，避免静默使用旧版本。</li>
+        <li>清理重复的 fastfetch wrapper，降低后续维护成本。</li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>
