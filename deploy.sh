@@ -81,6 +81,10 @@ echo "  fish fastfetch wrapper → $BA/configs/fastfetch.fish"
 mkdir -p "$HOME/Pictures"
 ln -sfn "$BA/characters" "$HOME/Pictures/character"
 echo "  Pictures/character → $BA/characters"
+# SDDM/KDE 头像
+ln -sfn "$BA/current_avatar.png" "$HOME/.face"
+ln -sfn "$BA/current_avatar.png" "$HOME/.face.icon"
+echo "  .face + .face.icon → $BA/current_avatar.png"
 
 # ── Hyprland keybind ──
 echo ""
