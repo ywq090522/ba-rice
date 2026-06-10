@@ -2,14 +2,14 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
   "logo": {
     "type": "kitty",
-    "height": 50,
-    "width": 50,
+    "height": 35,
+    "width": 80,
     "padding": {
-      "left": 2,
+      "left": 0,
       "top": 0,
-      "right": 5
+      "right": 2
     },
-    "source": "/home/ywq/.ba-rice/characters/mari_idol/icon.png",
+    "source": "/home/ywq/.ba-rice/characters/shiroko_terror/icon.png",
     "recache": true
   },
   "display": {
@@ -22,28 +22,18 @@
       "│\u001b[52C│\u001b[52D",
       "──",
       "├── ",
-      " ──────────────────────────────────────────┤",
+      " ──────────────────────────────────────────╮",
       " ────────────────────────────────────────┤",
-      " ───────────────────────────────────────────┤"
-    ],
-    "color": {
-      "keys": "#7dc4e4"
-    }
+      " ───────────────────────────────────────────┤",
+      "╭── "
+    ]
   },
   "modules": [
     "break",
+    "break",
     {
       "type": "custom",
-      "format": "{#keys}╭{$1}╮"
-    },
-    {
-      "type": "title",
-      "format": "{$2}     ゜+。゜*。+゜Nekoha Shizuku ゜+。*゜+。゜",
-      "outputColor": "#7dc4e4"
-    },
-    {
-      "type": "custom",
-      "key": "{$4}System{$5}"
+      "key": "{$8}System{$5}"
     },
     {
       "key": "{$2}{icon} distro   ",
@@ -77,17 +67,12 @@
     {
       "type": "lm",
       "key": "{$2}{icon} loginMgr ",
-      "format": "{service} {#2}[v{version}] [{type}]"
+      "format": "{service} {#2}[v{version}]"
     },
     {
       "type": "wm",
       "key": "{$2}{icon} windowMgr",
-      "format": "{pretty-name} {#2}[v{version}] [{protocol-name}]"
-    },
-    {
-      "type": "custom",
-      "key": "{$2} desktopSh",
-      "format": "dms {#2}[v1.4.4]"
+      "format": "{pretty-name} {#2}[v{version}]"
     },
     {
       "type": "packages",
@@ -176,21 +161,6 @@
       "format": "Catppuccin"
     },
     {
-      "type": "custom",
-      "key": "{$2} flavor   ",
-      "format": "Macchiato"
-    },
-    {
-      "type": "custom",
-      "key": "{$2} mainColor",
-      "format": "Sapphire {#2}[{#0}{#keys}●{#0}{#2}] "
-    },
-    {
-      "type": "terminaltheme",
-      "key": "{$2} termTheme",
-      "format": "Catppuccin Macchiato"
-    },
-    {
       "type": "terminalfont",
       "key": "{$2}{icon} font     ",
       "format": "{name} {#2}[{size}px]"
@@ -209,5 +179,10 @@
       "type": "custom",
       "format": "{#1}{#keys}╰{$1}╯"
     }
-  ]
+  ],
+  "color": {
+    "title": "#b4befe",
+    "separator": "#b4befe",
+    "keys": "#b4befe"
+  }
 }
