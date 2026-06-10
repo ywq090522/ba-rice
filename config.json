@@ -1,5 +1,5 @@
 {
-  "current": "shiroko_terror",
+  "current": "shiroko",
   "characters": {
     "ako": {
       "name": "Ako",
@@ -117,7 +117,7 @@
       "color": "#74c7ec"
     },
     "shiroko_terror": {
-      "name": "Shiroko (Terror)",
+      "name": "Shiroko * Terror",
       "dir": "/home/ywq/Pictures/character/shiroko_terror",
       "color": "#b4befe"
     },
