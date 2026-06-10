@@ -63,8 +63,9 @@ update_sddm() {
   local sddm_theme="/usr/share/sddm/themes/catppuccin-mocha-mauve"
 
   if [ -f "$avatar" ]; then
-    sudo cp "$avatar" "$sddm_theme/avatars/$USER.face.icon" 2>/dev/null ||
-      sudo cp "$avatar" "$sddm_theme/faces/$USER.face.icon" 2>/dev/null
+    rm -f "$sddm_theme/avatars/$USER.face.icon" 2>/dev/null
+    cp "$avatar" "$sddm_theme/avatars/$USER.face.icon" 2>/dev/null ||
+      cp "$avatar" "$sddm_theme/faces/$USER.face.icon" 2>/dev/null
   fi
 }
 
