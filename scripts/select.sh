@@ -56,18 +56,6 @@ update_hyprlock() {
   fi
 }
 
-# 更新 SDDM 头像
-update_sddm() {
-  local char="$1"
-  local avatar="$CHAR_DIR/$char/avatar.png"
-  local sddm_theme="/usr/share/sddm/themes/catppuccin-mocha-mauve"
-
-  if [ -f "$avatar" ]; then
-    rm -f "$sddm_theme/avatars/$USER.face.icon" 2>/dev/null
-    cp "$avatar" "$sddm_theme/avatars/$USER.face.icon" 2>/dev/null ||
-      cp "$avatar" "$sddm_theme/faces/$USER.face.icon" 2>/dev/null
-  fi
-}
 
 # 更新 fastfetch
 update_fastfetch() {
@@ -108,7 +96,6 @@ main() {
   # 并行更新所有组件
   update_wallpaper "$selected" &
   update_hyprlock "$selected" &
-  update_sddm "$selected" &
   update_fastfetch "$selected" &
 
   wait
