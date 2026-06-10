@@ -68,7 +68,7 @@ update_fastfetch() {
   fi
 
   if [ -f "$icon" ]; then
-    local ff_config="$HOME/.config/fastfetch/config.jsonc"
+    local ff_config="$HOME/.ba-rice/configs/fastfetch.jsonc"
 
     jq --arg icon "$icon" \
       --arg color "$color" \

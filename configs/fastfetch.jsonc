@@ -1,49 +1,213 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
-  "modules": [
-    "title",
-    "separator",
-    "os",
-    "host",
-    "kernel",
-    "uptime",
-    "packages",
-    "shell",
-    "display",
-    "de",
-    "wm",
-    "wmtheme",
-    "theme",
-    "icons",
-    "font",
-    "cursor",
-    "terminal",
-    "terminalfont",
-    "cpu",
-    "gpu",
-    "memory",
-    "swap",
-    "disk",
-    "localip",
-    "battery",
-    "poweradapter",
-    "locale",
-    "break",
-    "colors"
-  ],
   "logo": {
     "type": "kitty",
-    "source": "/home/ywq/.ba-rice/characters/rio/icon.png",
+    "height": 50,
+    "width": 50,
     "padding": {
-      "top": 1,
-      "right": 2,
-      "left": 2
+      "left": 2,
+      "top": 0,
+      "right": 5
     },
+    "source": "/home/ywq/.ba-rice/characters/mari_idol/icon.png",
     "recache": true
   },
-  "color": {
-    "title": "#f38ba8",
-    "separator": "#f38ba8",
-    "keys": "#f38ba8"
-  }
+  "display": {
+    "size": {
+      "binaryPrefix": "jedec"
+    },
+    "separator": "      ",
+    "constants": [
+      "────────────────────────────────────────────────────",
+      "│\u001b[52C│\u001b[52D",
+      "──",
+      "├── ",
+      " ──────────────────────────────────────────┤",
+      " ────────────────────────────────────────┤",
+      " ───────────────────────────────────────────┤"
+    ],
+    "color": {
+      "keys": "#7dc4e4"
+    }
+  },
+  "modules": [
+    "break",
+    {
+      "type": "custom",
+      "format": "{#keys}╭{$1}╮"
+    },
+    {
+      "type": "title",
+      "format": "{$2}     ゜+。゜*。+゜Nekoha Shizuku ゜+。*゜+。゜",
+      "outputColor": "#7dc4e4"
+    },
+    {
+      "type": "custom",
+      "key": "{$4}System{$5}"
+    },
+    {
+      "key": "{$2}{icon} distro   ",
+      "type": "os",
+      "format": "{pretty-name} {#2}[{arch}]"
+    },
+    {
+      "key": "{$2}{icon} kernel   ",
+      "type": "kernel",
+      "format": "{sysname} {#2}[v{release}]"
+    },
+    {
+      "key": "{$2}󰅐 uptime   ",
+      "type": "uptime",
+      "format": "{?days}{days}d + {?}{hours}h {minutes}m {seconds}s"
+    },
+    {
+      "type": "processes",
+      "key": "{$2}{icon} processes"
+    },
+    {
+      "type": "initsystem",
+      "key": "{$2}{icon} initSys  ",
+      "format": "{name} {#2}[v{version}] [{pid}]"
+    },
+    {
+      "type": "custom",
+      "key": "{$2} bootMgr  ",
+      "format": "GRUB {#2}[v2.14-1]"
+    },
+    {
+      "type": "lm",
+      "key": "{$2}{icon} loginMgr ",
+      "format": "{service} {#2}[v{version}] [{type}]"
+    },
+    {
+      "type": "wm",
+      "key": "{$2}{icon} windowMgr",
+      "format": "{pretty-name} {#2}[v{version}] [{protocol-name}]"
+    },
+    {
+      "type": "custom",
+      "key": "{$2} desktopSh",
+      "format": "dms {#2}[v1.4.4]"
+    },
+    {
+      "type": "packages",
+      "key": "{$2}{icon} packages ",
+      "format": "{pacman} {#2}[pacman]{#0}, {flatpak-system} {#2}[flatpak]"
+    },
+    {
+      "key": "{$2} terminal ",
+      "type": "terminal",
+      "format": "{pretty-name} {#2}[v{version}] [{pid}]"
+    },
+    {
+      "key": "{$2} shell    ",
+      "type": "shell",
+      "format": "{pretty-name} {#2}[v{version}] [{pid}]"
+    },
+    {
+      "type": "datetime",
+      "key": "{$2}{icon} datetime ",
+      "format": "{year}/{month}/{day-in-month} {hour-12}:{minute-pretty}:{second-pretty} {#2}[{timezone-name}] [UTC{offset-from-utc}]"
+    },
+    {
+      "type": "locale",
+      "key": "{$2}{icon} locale   "
+    },
+    {
+      "type": "localip",
+      "key": "{$2}{icon} localIp  ",
+      "format": "{ipv4} {#2}[{ifname}]"
+    },
+    {
+      "type": "custom",
+      "key": "{$4}Hardware{$6}"
+    },
+    {
+      "type": "board",
+      "key": "{$2}{icon} board    ",
+      "format": "{name}"
+    },
+    {
+      "type": "chassis",
+      "key": "{$2}󰇄 chassIs  ",
+      "format": "{type}"
+    },
+    {
+      "type": "command",
+      "key": "{$2} cpu      ",
+      "format": "{result}",
+      "shell": "/bin/bash",
+      "text": "exec ~/.config/fastfetch/cpu.sh"
+    },
+    {
+      "type": "command",
+      "key": "{$2}󰾲 gpu      ",
+      "format": "{result}",
+      "shell": "/bin/bash",
+      "text": "exec ~/.config/fastfetch/gpu.sh"
+    },
+    {
+      "type": "memory",
+      "key": "{$2}{icon} memory   ",
+      "format": "{used} / {total} {#2}[{#0}{percentage}{#2}]"
+    },
+    {
+      "type": "swap",
+      "key": "{$2}{icon} swap     ",
+      "format": "{used} / {total} {#2}[{#0}{percentage}{#2}]"
+    },
+    {
+      "type": "display",
+      "key": "{$2}{icon} display  ",
+      "format": "{width}x{height} in {inch}\" {refresh-rate}Hz {#2}[{type}]"
+    },
+    {
+      "type": "disk",
+      "key": "{$2}{icon} disk     ",
+      "format": "{size-used} / {size-total} {#2}[{#0}{size-percentage}{#2}] [{filesystem}]"
+    },
+    {
+      "type": "custom",
+      "key": "{$4}Theme{$7}"
+    },
+    {
+      "type": "custom",
+      "key": "{$2} scheme   ",
+      "format": "Catppuccin"
+    },
+    {
+      "type": "custom",
+      "key": "{$2} flavor   ",
+      "format": "Macchiato"
+    },
+    {
+      "type": "custom",
+      "key": "{$2} mainColor",
+      "format": "Sapphire {#2}[{#0}{#keys}●{#0}{#2}] "
+    },
+    {
+      "type": "terminaltheme",
+      "key": "{$2} termTheme",
+      "format": "Catppuccin Macchiato"
+    },
+    {
+      "type": "terminalfont",
+      "key": "{$2}{icon} font     ",
+      "format": "{name} {#2}[{size}px]"
+    },
+    {
+      "type": "cursor",
+      "key": "{$2}{icon} cursor   ",
+      "format": "{theme}"
+    },
+    {
+      "type": "colors",
+      "key": "{$2} colors   ",
+      "symbol": "circle"
+    },
+    {
+      "type": "custom",
+      "format": "{#1}{#keys}╰{$1}╯"
+    }
+  ]
 }
