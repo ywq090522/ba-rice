@@ -76,10 +76,14 @@ echo "  cpu.sh → $BA/scripts/cpu.sh"
 ln -sfn "$BA/scripts/gpu.sh" "$HOME/.config/fastfetch/gpu.sh"
 echo "  gpu.sh → $BA/scripts/gpu.sh"
 
-# fish fastfetch wrapper
-mkdir -p "$HOME/.config/fish/conf.d"
-ln -sfn "$BA/configs/fastfetch.fish" "$HOME/.config/fish/conf.d/fastfetch.fish"
-echo "  fish fastfetch wrapper → $BA/configs/fastfetch.fish"
+# fish fastfetch wrapper (skip if fish not installed)
+if command -v fish &>/dev/null; then
+    mkdir -p "$HOME/.config/fish/conf.d"
+    ln -sfn "$BA/configs/fastfetch.fish" "$HOME/.config/fish/conf.d/fastfetch.fish"
+    echo "  fish fastfetch wrapper → $BA/configs/fastfetch.fish"
+else
+    echo "  fish not installed, skipping wrapper"
+fi
 
 # hyprlock config
 ln -sfn "$BA/configs/hyprlock.conf" "$HOME/.config/hypr/hyprlock.conf"
