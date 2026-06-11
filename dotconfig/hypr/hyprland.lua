@@ -208,4 +208,4 @@ hl.layer_rule({
     ignore_alpha = 0.2,
 })
 
-hl.source("~/.ba-rice/configs/hyprland-character.conf")
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.ba-rice/scripts/select.sh"))
