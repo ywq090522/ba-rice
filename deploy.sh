@@ -81,6 +81,9 @@ mkdir -p "$HOME/.config/fish/conf.d"
 ln -sfn "$BA/configs/fastfetch.fish" "$HOME/.config/fish/conf.d/fastfetch.fish"
 echo "  fish fastfetch wrapper → $BA/configs/fastfetch.fish"
 
+# hyprlock config
+ln -sfn "$BA/configs/hyprlock.conf" "$HOME/.config/hypr/hyprlock.conf"
+echo "  hyprlock config → $BA/configs/hyprlock.conf"
 # Pictures/character 兼容性
 mkdir -p "$HOME/Pictures"
 ln -sfn "$BA/characters" "$HOME/Pictures/character"
