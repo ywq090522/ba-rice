@@ -96,7 +96,7 @@ echo "▸ 配置 Hyprland keybind..."
 HYPR_CONF="$HOME/.config/hypr/hyprland.conf"
 HYPR_CHAR="$BA/configs/hyprland-character.conf"
 if [ -f "$HYPR_CONF" ]; then
-    if ! grep -q 'ba-rice' "$HYPR_CONF" 2>/dev/null; then
+    if ! grep -q 'hyprland-character.conf' "$HYPR_CONF" 2>/dev/null; then
         echo "" >> "$HYPR_CONF"
         echo "# ba-rice character theme" >> "$HYPR_CONF"
         echo "source = $HYPR_CHAR" >> "$HYPR_CONF"
