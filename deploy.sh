@@ -71,6 +71,10 @@ echo "▸ 创建 symlink..."
 mkdir -p "$HOME/.config/fastfetch"
 ln -sfn "$BA/configs/fastfetch.jsonc" "$HOME/.config/fastfetch/config.jsonc"
 echo "  fastfetch config → $BA/configs/fastfetch.jsonc"
+ln -sfn "$BA/configs/cpu.sh" "$HOME/.config/fastfetch/cpu.sh"
+echo "  cpu.sh → $BA/configs/cpu.sh"
+ln -sfn "$BA/configs/gpu.sh" "$HOME/.config/fastfetch/gpu.sh"
+echo "  gpu.sh → $BA/configs/gpu.sh"
 
 # fish fastfetch wrapper
 mkdir -p "$HOME/.config/fish/conf.d"
