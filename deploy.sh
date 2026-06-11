@@ -128,6 +128,26 @@ else
     echo "    source = $HYPR_CHAR"
 fi
 
+# ── systemd service (scx-bpfland) ──
+echo ""
+echo "▸ 部署 scx-bpfland systemd service..."
+SERVICE_SRC="$BA/dotconfig/systemd/system/scx-bpfland.service"
+SERVICE_DST="/etc/systemd/system/scx-bpfland.service"
+if [ -f "$SERVICE_SRC" ]; then
+    if [ "$(id -u)" -eq 0 ]; then
+        cp "$SERVICE_SRC" "$SERVICE_DST"
+        systemctl daemon-reload
+        systemctl enable scx-bpfland.service
+        echo "  ✓ 已安装并启用 scx-bpfland.service"
+    else
+        echo "  ! 需要 root 权限安装 systemd service，手动执行:"
+        echo "    sudo cp $SERVICE_SRC $SERVICE_DST"
+        echo "    sudo systemctl daemon-reload && sudo systemctl enable scx-bpfland"
+    fi
+else
+    echo "  ! scx-bpfland.service 不存在，跳过"
+fi
+
 # ── 初始化当前角色 ──
 echo ""
 echo "▸ 初始化当前角色..."

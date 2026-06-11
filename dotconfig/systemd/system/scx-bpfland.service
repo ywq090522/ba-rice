@@ -1,0 +1,11 @@
+[Unit]
+Description=Start sched_ext bpfland scheduler
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/scxctl start --sched bpfland
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

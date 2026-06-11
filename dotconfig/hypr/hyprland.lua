@@ -17,7 +17,6 @@ local menu        = "rofi -show drun"
 hl.on("hyprland.start", function()
     hl.exec_cmd("swww-daemon &")
     hl.exec_cmd("sleep 1 && swww img \"$HOME/.ba-rice/current_wallpaper.png\" --transition-type grow --transition-step 30 --transition-fps 60 --transition-duration 2")
-    hl.exec_cmd("sudo scxctl start --sched bpfland")
     hl.exec_cmd("waybar &")
     hl.exec_cmd("fcitx5 -d")
     hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1 &")
