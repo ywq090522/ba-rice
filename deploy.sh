@@ -97,6 +97,18 @@ ln -sfn "$BA/current_avatar.png" "$HOME/.face"
 ln -sfn "$BA/current_avatar.png" "$HOME/.face.icon"
 echo "  .face + .face.icon → $BA/current_avatar.png"
 
+# dotconfig (hypr/rofi/mako/waybar)
+for dir in hypr rofi mako waybar; do
+    if [ -d "$BA/dotconfig/$dir" ]; then
+        mkdir -p "$HOME/.config/$dir"
+        for f in "$BA/dotconfig/$dir"/*; do
+            [ -f "$f" ] || continue
+            fname=$(basename "$f")
+            ln -sfn "$f" "$HOME/.config/$dir/$fname"
+            echo "  .config/$dir/$fname → dotconfig/$dir/$fname"
+        done
+    fi
+done
 # ── Hyprland keybind ──
 echo ""
 echo "▸ 配置 Hyprland keybind..."
