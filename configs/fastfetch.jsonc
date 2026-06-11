@@ -9,7 +9,7 @@
       "top": 0,
       "right": 2
     },
-    "source": "/home/ywq/.ba-rice/characters/shiroko_terror/icon.png",
+    "source": "/home/ywq/.ba-rice/characters/mari_idol/icon.png",
     "recache": true
   },
   "display": {
@@ -92,7 +92,7 @@
     {
       "type": "datetime",
       "key": "{$2}{icon} datetime ",
-      "format": "{year}/{month}/{day-in-month} {hour-12}:{minute-pretty}:{second-pretty} {#2}[{timezone-name}] [UTC{offset-from-utc}]"
+      "format": "{year}/{month}/{day-in-month} {hour-12}:{minute-pretty}:{second-pretty} {#2}[{timezone-name}]"
     },
     {
       "type": "locale",
@@ -181,8 +181,8 @@
     }
   ],
   "color": {
-    "title": "#b4befe",
-    "separator": "#b4befe",
-    "keys": "#b4befe"
+    "title": "#fab387",
+    "separator": "#fab387",
+    "keys": "#fab387"
   }
 }
