@@ -126,6 +126,16 @@ else
     fi
 fi
 
+# 初始化头像和壁纸
+CURRENT_CHAR=$(jq -r ".current" "$BA/config.json")
+if [ -f "$BA/characters/$CURRENT_CHAR/avatar.png" ]; then
+    cp "$BA/characters/$CURRENT_CHAR/avatar.png" "$BA/current_avatar.png"
+    echo "  头像 → current_avatar.png"
+fi
+if [ -f "$BA/characters/$CURRENT_CHAR/wallpaper.png" ]; then
+    cp "$BA/characters/$CURRENT_CHAR/wallpaper.png" "$BA/current_wallpaper.png"
+    echo "  壁纸 → current_wallpaper.png"
+fi
 # 更新 fastfetch icon 路径
 ICON="$BA/characters/$(jq -r '.current' "$BA/config.json")/icon.png"
 if [ -f "$ICON" ]; then
