@@ -1,0 +1,127 @@
+/* ──────────────────────────────────────────────
+   Rofi Config — Catppuccin Mocha
+   ────────────────────────────────────────────── */
+
+configuration {
+    modi: "drun,run,filebrowser";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    display-drun: " 应用";
+    display-run: " 运行";
+    display-filebrowser: " 文件";
+    drun-display-format: "{name}";
+    font: "MiSans VF Medium 12";
+}
+
+@theme "/dev/null"
+
+/* ── Mocha Colors ──────────────────────────── */
+* {
+    bg:       #1e1e2ebb;
+    bg-alt:   #313244cc;
+    surface0: #313244;
+    surface1: #45475a;
+    overlay0: #6c7086;
+    text:     #cdd6f4;
+    subtext:  #a6adc8;
+    mauve:    #cba6f7;
+    blue:     #89b4fa;
+    lavender: #b4befe;
+    peach:    #fab387;
+
+    background-color: transparent;
+    text-color:       @text;
+    margin:  0;
+    padding: 0;
+    spacing: 0;
+}
+
+/* ── Window ────────────────────────────────── */
+window {
+    width:            600px;
+    background-color: @bg;
+    border:           2px solid;
+    border-color:     @surface0;
+    border-radius:    14px;
+    padding:          20px;
+}
+
+/* ── Input ─────────────────────────────────── */
+inputbar {
+    children: [prompt, entry];
+    background-color: @bg-alt;
+    border-radius:    10px;
+    padding:          8px 12px;
+    margin:           0 0 12px 0;
+}
+
+prompt {
+    text-color: @mauve;
+    margin:     0 8px 0 0;
+}
+
+entry {
+    placeholder:       "搜索应用...";
+    placeholder-color: @overlay0;
+    text-color:        @text;
+}
+
+/* ── Listview ──────────────────────────────── */
+listview {
+    lines:    8;
+    columns:  1;
+    spacing:  4px;
+    scrollbar: false;
+}
+
+/* ── Elements ──────────────────────────────── */
+element {
+    padding:       8px 12px;
+    border-radius: 8px;
+    spacing:       12px;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color:       @text;
+}
+
+element normal.active {
+    background-color: #cba6f719;
+    text-color:       @mauve;
+}
+
+element selected.normal {
+    background-color: #cba6f726;
+    text-color:       @mauve;
+    border:           1px solid;
+    border-color:     #cba6f74d;
+}
+
+element selected.active {
+    background-color: #cba6f733;
+    text-color:       @mauve;
+}
+
+element-icon {
+    size: 28px;
+    vertical-align: 0.5;
+}
+
+element-text {
+    text-color: inherit;
+    highlight:  underline;
+    vertical-align: 0.5;
+}
+
+/* ── Message ───────────────────────────────── */
+message {
+    background-color: @bg-alt;
+    border-radius:    10px;
+    margin:           12px 0 0 0;
+    padding:          8px;
+}
+
+textbox {
+    text-color: @subtext;
+}

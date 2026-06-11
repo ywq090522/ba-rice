@@ -1,0 +1,41 @@
+# ──────────────────────────────────────────────
+#  Mako Config — Catppuccin Mocha
+# ──────────────────────────────────────────────
+
+# ── Appearance ───────────────────────────────
+font=CaskaydiaCove Nerd Font 11
+width=360
+height=120
+margin=16
+padding=14
+border-size=2
+border-radius=12
+
+# ── Colors ───────────────────────────────────
+background-color=#1e1e2eef
+text-color=#cdd6f4
+border-color=#313244
+progress-color=over #89b4fa
+
+# ── Behavior ─────────────────────────────────
+default-timeout=5000
+max-visible=4
+max-history=10
+group-by=app-name
+layer=overlay
+
+# ── Urgency ──────────────────────────────────
+[urgency=low]
+border-color=#45475a
+default-timeout=3000
+
+[urgency=normal]
+border-color=#89b4fa
+
+[urgency=high]
+border-color=#cba6f7
+default-timeout=0
+
+# ── App-specific ─────────────────────────────
+[app-name=Spotify]
+default-timeout=3000
