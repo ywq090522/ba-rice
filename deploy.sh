@@ -98,7 +98,7 @@ ln -sfn "$BA/current_avatar.png" "$HOME/.face.icon"
 echo "  .face + .face.icon → $BA/current_avatar.png"
 
 # dotconfig (hypr/rofi/mako/waybar)
-for dir in hypr rofi mako waybar; do
+for dir in hypr rofi mako waybar kitty; do
     if [ -d "$BA/dotconfig/$dir" ]; then
         mkdir -p "$HOME/.config/$dir"
         for f in "$BA/dotconfig/$dir"/*; do
