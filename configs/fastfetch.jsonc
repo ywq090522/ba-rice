@@ -33,6 +33,15 @@
     "break",
     {
       "type": "custom",
+      "format": "{#keys}╭{$1}╮"
+    },
+    {
+      "type": "title",
+      "format": "{$2}     Azusa (Swimsuit)",
+      "outputColor": "#fab387"
+    },
+    {
+      "type": "custom",
       "key": "{$8}System{$5}"
     },
     {

@@ -74,13 +74,18 @@ update_fastfetch() {
   if [ -f "$icon" ]; then
     local ff_config="$HOME/.ba-rice/configs/fastfetch.jsonc"
 
+    local name=$(jq -r ".characters[\"$char\"].name // \"$char\"" "$CONFIG_FILE")
+    local format="{\$2}     $name"
+
     jq --arg icon "$icon" \
       --arg color "$color" \
+      --arg format "$format" \
       '.logo.source = $icon |
        .logo.recache = true |
        .color.title = $color |
        .color.separator = $color |
-       .color.keys = $color' "$ff_config" >"${ff_config}.tmp" &&
+       .color.keys = $color |
+       .modules = [.modules[] | if .type == "title" then .format = $format | .outputColor = $color else . end]' "$ff_config" >"${ff_config}.tmp" &&
       mv "${ff_config}.tmp" "$ff_config"
   fi
 }
