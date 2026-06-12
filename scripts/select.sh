@@ -75,7 +75,10 @@ update_fastfetch() {
     local ff_config="$HOME/.ba-rice/configs/fastfetch.jsonc"
 
     local name=$(jq -r ".characters[\"$char\"].name // \"$char\"" "$CONFIG_FILE")
-    local format="{\$2}     $name"
+    local len=${#name}
+    local width=48
+    local pad=$(( (width - len) / 2 ))
+    local format=$(printf "%${pad}s%s" "" "$name")
 
     jq --arg icon "$icon" \
       --arg color "$color" \
