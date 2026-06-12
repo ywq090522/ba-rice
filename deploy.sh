@@ -177,11 +177,27 @@ ICON="$BA/characters/$(jq -r '.current' "$BA/config.json")/icon.png"
 if [ -f "$ICON" ]; then
     jq --arg icon "$ICON" '.logo.source = $icon' "$BA/configs/fastfetch.jsonc" > "$BA/configs/fastfetch.jsonc.tmp" && mv "$BA/configs/fastfetch.jsonc.tmp" "$BA/configs/fastfetch.jsonc"
 fi
+# 天气城市配置
+WEATHER=$(jq -r '.weather.city // empty' "$BA/config.json" 2>/dev/null)
+if [ -z "$WEATHER" ]; then
+    echo ""
+    read -rp "  输入天气城市（中文显示名，如 麻章）: " WEATHER_CITY
+    if [ -n "$WEATHER_CITY" ]; then
+        read -rp "  输入英文查询名（如 Mazhang，用于 wttr.in）: " WEATHER_QUERY
+        [ -z "$WEATHER_QUERY" ] && WEATHER_QUERY="$WEATHER_CITY"
+        jq --arg city "$WEATHER_CITY" --arg query "$WEATHER_QUERY" \
+            '. + {"weather": {"city": $city, "query": $query, "url": ("https://wttr.in/" + $query)}}' \
+            "$BA/config.json" > "$BA/config.json.tmp" && mv "$BA/config.json.tmp" "$BA/config.json"
+        echo "  天气城市: $WEATHER_CITY ($WEATHER_QUERY)"
+    fi
+fi
+
 
 echo ""
 echo "╔══════════════════════════════════════╗"
 echo "║   ✓ 部署完成！                        ║"
 echo "║                                      ║"
 echo "║   SUPER+W  → 角色选择器                ║"
-echo "║   fastfetch → 带角色色的系统信息         ║"
+echo "║   fastfetch → 带角色色的系统信息         ║
+║   天气模块 → waybar 显示城市+温度         ║"
 echo "╚══════════════════════════════════════╝"

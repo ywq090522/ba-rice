@@ -1,5 +1,5 @@
 {
-  "current": "mari_idol",
+  "current": "koharu",
   "characters": {
     "ako": {
       "name": "Ako",
@@ -113,5 +113,10 @@
       "name": "Yuuka (Sportswear)",
       "color": "#74c7ec"
     }
+  },
+  "weather": {
+    "city": "麻章",
+    "query": "Mazhang",
+    "url": "https://wttr.in/Mazhang"
   }
 }

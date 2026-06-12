@@ -13,7 +13,9 @@
     "hyprland/window"
   ],
   "modules-center": [
-    "mpris"
+    "mpris",
+    "custom/character",
+    "custom/weather"
   ],
   "modules-right": [
     "tray",
@@ -64,6 +66,23 @@
     "format-paused": "{title} - {artist}",
     "max-length": 40,
     "tooltip-format": "{title} - {artist}\n{album}"
+  },
+
+  "custom/character": {
+    "exec": "~/.ba-rice/scripts/waybar-character.sh",
+    "return-type": "json",
+    "interval": 0,
+    "signal": 1,
+    "on-click": "~/.ba-rice/scripts/select.sh",
+    "tooltip": true
+  },
+
+  "custom/weather": {
+    "exec": "~/.ba-rice/scripts/waybar-weather.sh",
+    "return-type": "json",
+    "interval": 1800,
+    "on-click": "xdg-open https://wttr.in/Mazhang",
+    "tooltip": true
   },
 
   "custom/separator": {

@@ -69,13 +69,8 @@ get_vram() {
 
 VRAM=$(get_vram "$GPU_ADDR")
 
-# 驱动
-DRIVER=$(lspci -k -s "$GPU_ADDR" 2>/dev/null | grep "Kernel driver" | awk -F ': ' '{print $2}')
-
-if [ -n "$VRAM" ] && [ -n "$DRIVER" ]; then
-    printf "%s \e[2m[%s] [%s]\e[0m" "$NAME" "$VRAM" "$DRIVER"
-elif [ -n "$DRIVER" ]; then
-    printf "%s \e[2m[%s]\e[0m" "$NAME" "$DRIVER"
+if [ -n "$VRAM" ]; then
+    printf "%s \e[2m[%s]\e[0m" "$NAME" "$VRAM"
 else
     printf "%s" "$NAME"
 fi

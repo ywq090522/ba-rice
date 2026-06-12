@@ -9,7 +9,7 @@
       "top": 0,
       "right": 2
     },
-    "source": "PLACEHOLDER",
+    "source": "/home/ywq/.ba-rice/characters/koharu/icon.png",
     "recache": true
   },
   "display": {
@@ -57,7 +57,7 @@
     {
       "type": "initsystem",
       "key": "{$2}{icon} initSys  ",
-      "format": "{name} {#2}[v{version}] [{pid}]"
+      "format": "{name} {#2}[v{version}]"
     },
     {
       "type": "custom",
@@ -82,12 +82,12 @@
     {
       "key": "{$2} terminal ",
       "type": "terminal",
-      "format": "{pretty-name} {#2}[v{version}] [{pid}]"
+      "format": "{pretty-name} {#2}[v{version}]"
     },
     {
       "key": "{$2} shell    ",
       "type": "shell",
-      "format": "{pretty-name} {#2}[v{version}] [{pid}]"
+      "format": "{pretty-name} {#2}[v{version}]"
     },
     {
       "type": "datetime",
@@ -106,16 +106,6 @@
     {
       "type": "custom",
       "key": "{$4}Hardware{$6}"
-    },
-    {
-      "type": "board",
-      "key": "{$2}{icon} board    ",
-      "format": "{name}"
-    },
-    {
-      "type": "chassis",
-      "key": "{$2}󰇄 chassIs  ",
-      "format": "{type}"
     },
     {
       "type": "command",
@@ -181,8 +171,8 @@
     }
   ],
   "color": {
-    "title": "#fab387",
-    "separator": "#fab387",
-    "keys": "#fab387"
+    "title": "#f38ba8",
+    "separator": "#f38ba8",
+    "keys": "#f38ba8"
   }
 }
