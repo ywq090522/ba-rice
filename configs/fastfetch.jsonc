@@ -9,7 +9,7 @@
       "top": 0,
       "right": 2
     },
-    "source": "/home/ywq/.ba-rice/characters/koharu/icon.png",
+    "source": "/home/ywq/.ba-rice/characters/azusa_swimsuit/icon.png",
     "recache": true
   },
   "display": {
@@ -171,8 +171,8 @@
     }
   ],
   "color": {
-    "title": "#f38ba8",
-    "separator": "#f38ba8",
-    "keys": "#f38ba8"
+    "title": "#fab387",
+    "separator": "#fab387",
+    "keys": "#fab387"
   }
 }

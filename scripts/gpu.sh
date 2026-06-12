@@ -17,7 +17,13 @@ get_name() {
     if echo "$info" | grep -qi "nvidia"; then
         name=$(echo "$info" | grep -oE "GeForce [A-Za-z ]+[0-9]+[A-Za-z]*|RTX [0-9A-Za-z ]+|GTX [0-9A-Za-z ]+|Quadro [A-Za-z0-9 ]+|Tesla [A-Za-z0-9 ]+" | head -1 | sed 's/ *$//')
     elif echo "$info" | grep -qiE "\bamd\b|\bati\b|radeon"; then
-        name=$(echo "$info" | grep -oE "Radeon [A-Za-z ]*[0-9]+[A-Za-z]*" | head -1 | sed 's/ *$//')
+        local raw=$(echo "$info" | sed 's/.*\[Radeon //; s/\].*//')
+        local base=$(echo "$raw" | cut -d'/' -f1 | sed 's/^ *//; s/ *$//')
+        if echo "$raw" | grep -qi "XT"; then
+            name="$base XT"
+        else
+            name="$base"
+        fi
     elif echo "$info" | grep -qi "intel"; then
         name=$(echo "$info" | grep -oE "Arc [A-Z0-9 ]+|Iris [A-Za-z0-9 ]+|UHD Graphics [0-9]*|HD Graphics [0-9]*|Graphics [0-9]*" | head -1 | sed 's/ *$//')
     fi
@@ -53,7 +59,7 @@ get_vram() {
             if [ -f "$vram_file" ]; then
                 local bytes=$(cat "$vram_file")
                 if [ "$bytes" -gt 0 ] 2>/dev/null; then
-                    echo "$((bytes / 1024 / 1024 / 1024)) GB"
+                    echo "$(( (bytes + 536870912) / 1024 / 1024 / 1024 )) GB"
                     return
                 fi
             fi
