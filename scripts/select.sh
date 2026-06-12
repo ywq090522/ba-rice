@@ -88,7 +88,7 @@ update_fastfetch() {
        .color.title = $color |
        .color.separator = $color |
        .color.keys = $color |
-       .modules = [.modules[] | if .type == "title" then .format = $format | .outputColor = $color else . end]' "$ff_config" >"${ff_config}.tmp" &&
+       .modules = [.modules[] | if type == "object" and .type == "title" then .format = $format | .outputColor = $color else . end]' "$ff_config" >"${ff_config}.tmp" &&
       mv "${ff_config}.tmp" "$ff_config"
   fi
 }
