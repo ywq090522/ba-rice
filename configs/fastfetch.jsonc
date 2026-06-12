@@ -51,18 +51,9 @@
       "format": "{?days}{days}d + {?}{hours}h {minutes}m {seconds}s"
     },
     {
-      "type": "processes",
-      "key": "{$2}{icon} processes"
-    },
-    {
       "type": "initsystem",
       "key": "{$2}{icon} initSys  ",
       "format": "{name} {#2}[v{version}]"
-    },
-    {
-      "type": "custom",
-      "key": "{$2} bootMgr  ",
-      "format": "GRUB {#2}[v2.14-1]"
     },
     {
       "type": "lm",
@@ -93,15 +84,6 @@
       "type": "datetime",
       "key": "{$2}{icon} datetime ",
       "format": "{year}/{month}/{day-in-month} {hour-12}:{minute-pretty}:{second-pretty} {#2}[{timezone-name}]"
-    },
-    {
-      "type": "locale",
-      "key": "{$2}{icon} locale   "
-    },
-    {
-      "type": "localip",
-      "key": "{$2}{icon} localIp  ",
-      "format": "{ipv4} {#2}[{ifname}]"
     },
     {
       "type": "custom",
