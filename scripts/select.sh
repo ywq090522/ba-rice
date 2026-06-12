@@ -78,7 +78,8 @@ update_fastfetch() {
     local len=${#name}
     local width=48
     local pad=$(( (width - len) / 2 ))
-    local format=$(printf "%${pad}s%s" "" "$name")
+    local padstr=$(printf "%${pad}s" "")
+    local format="{\$2}${padstr}$name"
 
     jq --arg icon "$icon" \
       --arg color "$color" \
