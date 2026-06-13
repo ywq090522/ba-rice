@@ -75,8 +75,9 @@ ln -sfn "$BA/scripts/cpu.sh" "$HOME/.config/fastfetch/cpu.sh"
 echo "  cpu.sh → $BA/scripts/cpu.sh"
 ln -sfn "$BA/scripts/gpu.sh" "$HOME/.config/fastfetch/gpu.sh"
 echo "  gpu.sh → $BA/scripts/gpu.sh"
+ln -sfn "$BA/scripts/char-info.sh" "$HOME/.config/fastfetch/char-info.sh"
+echo "  char-info.sh → $BA/scripts/char-info.sh"
 
-# fish fastfetch wrapper (skip if fish not installed)
 if command -v fish &>/dev/null; then
     mkdir -p "$HOME/.config/fish/conf.d"
     ln -sfn "$BA/configs/fastfetch.fish" "$HOME/.config/fish/conf.d/fastfetch.fish"

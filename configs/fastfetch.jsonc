@@ -9,7 +9,7 @@
       "top": 0,
       "right": 2
     },
-    "source": "/home/ywq/.ba-rice/characters/azusa_swimsuit/icon.png",
+    "source": "/home/ywq/.ba-rice/characters/momoi_maid/icon.png",
     "recache": true
   },
   "display": {
@@ -36,8 +36,40 @@
     },
     {
       "type": "title",
-      "format": "{$2}                Azusa (Swimsuit)",
+      "format": "{$2}                  Momoi (Maid)",
       "outputColor": "#fab387"
+    },
+    {
+      "type": "custom",
+      "key": "{$4}Character{$5}"
+    },
+    {
+      "type": "command",
+      "key": "{$2}󰊗  game     ",
+      "format": "{result}",
+      "shell": "/bin/bash",
+      "text": "exec ~/.config/fastfetch/char-info.sh game"
+    },
+    {
+      "type": "command",
+      "key": "{$2}󰈸  element  ",
+      "format": "{result}",
+      "shell": "/bin/bash",
+      "text": "exec ~/.config/fastfetch/char-info.sh element"
+    },
+    {
+      "type": "command",
+      "key": "{$2}  role     ",
+      "format": "{result}",
+      "shell": "/bin/bash",
+      "text": "exec ~/.config/fastfetch/char-info.sh role"
+    },
+    {
+      "type": "command",
+      "key": "{$2}󰣆  faction  ",
+      "format": "{result}",
+      "shell": "/bin/bash",
+      "text": "exec ~/.config/fastfetch/char-info.sh faction"
     },
     {
       "type": "custom",
