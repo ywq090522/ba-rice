@@ -59,7 +59,7 @@
     },
     {
       "type": "command",
-      "key": "{$2}  role     ",
+      "key": "{$2}󰄭  role     ",
       "format": "{result}",
       "shell": "/bin/bash",
       "text": "exec ~/.config/fastfetch/char-info.sh role"
