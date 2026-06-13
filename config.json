@@ -1,117 +1,229 @@
 {
-  "current": "azusa_swimsuit",
+  "current": "midori_maid",
   "characters": {
     "ako": {
       "name": "Ako",
-      "color": "#89b4fa"
+      "color": "#89b4fa",
+      "game": "BA",
+      "element": "Mystic",
+      "role": "Support",
+      "faction": "Gehenna"
     },
     "arisu_maid": {
       "name": "Arisu (Maid)",
-      "color": "#94e2d5"
+      "color": "#94e2d5",
+      "game": "BA",
+      "element": "Mystic",
+      "role": "Attacker",
+      "faction": "Millennium"
     },
     "azusa_swimsuit": {
       "name": "Azusa (Swimsuit)",
-      "color": "#fab387"
+      "color": "#fab387",
+      "game": "BA",
+      "element": "Mystic",
+      "role": "Attacker",
+      "faction": "Trinity"
     },
     "hanako_swimsuit": {
       "name": "Hanako (Swimsuit)",
-      "color": "#f38ba8"
+      "color": "#f38ba8",
+      "game": "BA",
+      "element": "Sonic",
+      "role": "Attacker",
+      "faction": "Trinity"
     },
     "hifumi_swimsuit": {
       "name": "Hifumi (Swimsuit)",
-      "color": "#fab387"
+      "color": "#fab387",
+      "game": "BA",
+      "element": "Penetration",
+      "role": "Support",
+      "faction": "Trinity"
     },
     "hina_dress": {
       "name": "Hina (Dress)",
-      "color": "#89b4fa"
+      "color": "#89b4fa",
+      "game": "BA",
+      "element": "Explosive",
+      "role": "Attacker",
+      "faction": "Gehenna"
     },
     "hoshino": {
       "name": "Hoshino",
-      "color": "#f38ba8"
+      "color": "#f38ba8",
+      "game": "BA",
+      "element": "Penetration",
+      "role": "Tank",
+      "faction": "Abydos"
     },
     "hoshino_battle": {
       "name": "Hoshino (Battle)",
-      "color": "#f38ba8"
+      "color": "#f38ba8",
+      "game": "BA",
+      "element": "Mystic",
+      "role": "Tank",
+      "faction": "Abydos"
     },
     "hoshino_swimsuit": {
       "name": "Hoshino (Swimsuit)",
-      "color": "#74c7ec"
+      "color": "#74c7ec",
+      "game": "BA",
+      "element": "Explosive",
+      "role": "Support",
+      "faction": "Abydos"
     },
     "izuna": {
       "name": "Izuna",
-      "color": "#f38ba8"
+      "color": "#f38ba8",
+      "game": "BA",
+      "element": "Mystic",
+      "role": "Attacker",
+      "faction": "Hyakkiyako"
     },
     "kayoko_dress": {
       "name": "Kayoko (Dress)",
-      "color": "#f5e0dc"
+      "color": "#f5e0dc",
+      "game": "BA",
+      "element": "Penetration",
+      "role": "Attacker",
+      "faction": "Gehenna"
     },
     "kisaki": {
       "name": "Kisaki",
-      "color": "#f38ba8"
+      "color": "#f38ba8",
+      "game": "BA",
+      "element": "Sonic",
+      "role": "Support",
+      "faction": "Shanhaijing"
     },
     "koharu": {
       "name": "Koharu",
-      "color": "#f38ba8"
+      "color": "#f38ba8",
+      "game": "BA",
+      "element": "Explosive",
+      "role": "Healer",
+      "faction": "Trinity"
     },
     "kokona": {
       "name": "Kokona",
-      "color": "#89b4fa"
+      "color": "#89b4fa",
+      "game": "BA",
+      "element": "Penetration",
+      "role": "Healer",
+      "faction": "Shanhaijing"
     },
     "mari_idol": {
       "name": "Mari (Idol)",
-      "color": "#fab387"
+      "color": "#fab387",
+      "game": "BA",
+      "element": "Explosive",
+      "role": "Healer",
+      "faction": "Trinity"
     },
     "midori_maid": {
       "name": "Midori (Maid)",
-      "color": "#fab387"
+      "color": "#fab387",
+      "game": "BA",
+      "element": "Sonic",
+      "role": "Attacker",
+      "faction": "Millennium"
     },
     "mika": {
       "name": "Mika",
-      "color": "#f9e2af"
+      "color": "#f9e2af",
+      "game": "BA",
+      "element": "Penetration",
+      "role": "Attacker",
+      "faction": "Trinity"
     },
     "misaki": {
       "name": "Misaki",
-      "color": "#f5c2e7"
+      "color": "#f5c2e7",
+      "game": "BA",
+      "element": "Explosive",
+      "role": "Attacker",
+      "faction": "Arius"
     },
     "momoi_maid": {
       "name": "Momoi (Maid)",
-      "color": "#fab387"
+      "color": "#fab387",
+      "game": "BA",
+      "element": "Sonic",
+      "role": "Attacker",
+      "faction": "Millennium"
     },
     "natsu": {
       "name": "Natsu",
-      "color": "#74c7ec"
+      "color": "#74c7ec",
+      "game": "BA",
+      "element": "Mystic",
+      "role": "Tank",
+      "faction": "Trinity"
     },
     "noa": {
       "name": "Noa",
-      "color": "#74c7ec"
+      "color": "#74c7ec",
+      "game": "BA",
+      "element": "Mystic",
+      "role": "Support",
+      "faction": "Millennium"
     },
     "rio": {
       "name": "Rio",
-      "color": "#f38ba8"
+      "color": "#f38ba8",
+      "game": "BA",
+      "element": "Mystic",
+      "role": "Support",
+      "faction": "Millennium"
     },
     "shiroko": {
       "name": "Shiroko",
-      "color": "#74c7ec"
+      "color": "#74c7ec",
+      "game": "BA",
+      "element": "Explosive",
+      "role": "Attacker",
+      "faction": "Abydos"
     },
     "shiroko_terror": {
       "name": "Shiroko * Terror",
-      "color": "#b4befe"
+      "color": "#b4befe",
+      "game": "BA",
+      "element": "Mystic",
+      "role": "Attacker",
+      "faction": "Abydos"
     },
     "shun_kid": {
       "name": "Shun (Kid)",
-      "color": "#b4befe"
+      "color": "#b4befe",
+      "game": "BA",
+      "element": "Explosive",
+      "role": "Support",
+      "faction": "Shanhaijing"
     },
     "toki": {
       "name": "Toki",
-      "color": "#74c7ec"
+      "color": "#74c7ec",
+      "game": "BA",
+      "element": "Explosive",
+      "role": "Attacker",
+      "faction": "Millennium"
     },
     "yuuka_pajama": {
       "name": "Yuuka (Pajama)",
-      "color": "#b4befe"
+      "color": "#b4befe",
+      "game": "BA",
+      "element": "Explosive",
+      "role": "Tank",
+      "faction": "Millennium"
     },
     "yuuka_sportswear": {
       "name": "Yuuka (Sportswear)",
-      "color": "#74c7ec"
+      "color": "#74c7ec",
+      "game": "BA",
+      "element": "Mystic",
+      "role": "Tank",
+      "faction": "Millennium"
     }
   },
   "weather": {
