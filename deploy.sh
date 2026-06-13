@@ -89,6 +89,8 @@ fi
 # hyprlock config
 ln -sfn "$BA/configs/hyprlock.conf" "$HOME/.config/hypr/hyprlock.conf"
 echo "  hyprlock config → $BA/configs/hyprlock.conf"
+ln -sfn "$BA/configs/mocha.conf" "$HOME/.config/hypr/mocha.conf"
+echo "  mocha.conf → $BA/configs/mocha.conf"
 # Pictures/character 兼容性
 mkdir -p "$HOME/Pictures"
 ln -sfn "$BA/characters" "$HOME/Pictures/character"
