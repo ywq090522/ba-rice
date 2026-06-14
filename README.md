@@ -28,7 +28,7 @@
 1. 克隆仓库：
 
 ```
-git clone https://github.com/rdwq114514/ba-rice.git ~/.ba-rice
+git clone https://github.com/ywq090522/ba-rice.git ~/.ba-rice
 ```
 
 2. 运行部署脚本：
